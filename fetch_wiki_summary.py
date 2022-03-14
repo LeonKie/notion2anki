@@ -1,6 +1,5 @@
 import wikipedia
 
-
 def yield_querys(queries):
     for elt in queries:
         print(elt)
@@ -11,3 +10,6 @@ def yield_querys(queries):
             print("Wikipedia error")
             
         yield {'question': elt, 'answer': wiki_res} 
+        
+if __name__ == '__main__':
+    pass

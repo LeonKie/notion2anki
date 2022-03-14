@@ -1,4 +1,9 @@
 import genanki
+import fetch_notion_db
+import fetch_wiki_summary
+
+data=fetch_notion_db.main()
+querys=fetch_wiki_summary.yield_querys(data) #This is a generator
 
 
 my_model = genanki.Model(
@@ -19,15 +24,16 @@ my_model = genanki.Model(
 #Initialize an Anki Deck
 my_deck = genanki.Deck(
   2059400110,
-  'Country Capitals')
+  'Notion Deck')
 
 
-my_note = genanki.Note(
-  model=my_model,
-  fields=['Capital of Argentina', 'Buenos Aires'])
-
-
-my_deck.add_note(my_note)
+for elt in querys:
+    my_note = genanki.Note(
+      model=my_model,
+      fields=[elt['question'], elt['answer']])
+    my_deck.add_note(my_note)
+    
+#Create a new Anki Package
 
 
 #Export to Anki
