@@ -6,6 +6,7 @@ data=fetch_notion_db.main()
 querys=fetch_wiki_summary.yield_querys(data) #This is a generator
 
 
+
 my_model = genanki.Model(
   1607392319,
   'Simple Model',
