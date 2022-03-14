@@ -1,0 +1,5 @@
+genanki==0.13.0
+notion-df==0.0.5
+numpy==1.22.3
+pandas==1.4.1
+wikipedia==1.4.0
